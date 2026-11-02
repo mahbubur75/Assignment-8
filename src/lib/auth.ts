@@ -3,11 +3,12 @@ import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import { MongoClient } from "mongodb";
 
 const client = new MongoClient(process.env.MONGODB_URI!);
-
 const db = client.db("careconnect");
 
+const productionURL = "https://assignment-8-ten-omega.vercel.app";
+
 export const auth = betterAuth({
-  baseURL: process.env.BETTER_AUTH_URL || "http://localhost:3000",
+  baseURL: process.env.BETTER_AUTH_URL || productionURL,
 
   database: mongodbAdapter(db, {
     client,
@@ -18,11 +19,10 @@ export const auth = betterAuth({
     minPasswordLength: 6,
   },
 
-  // Google Login
   socialProviders: {
     google: {
-      clientId: process.env.GOOGLE_CLIENT_ID as string,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     },
   },
 
@@ -43,5 +43,6 @@ export const auth = betterAuth({
 
   trustedOrigins: [
     "http://localhost:3000",
+    productionURL,
   ],
 });
