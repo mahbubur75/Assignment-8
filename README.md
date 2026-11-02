@@ -6,9 +6,9 @@ From winter clothes distribution and blanket donations to community cleanups and
 
 🌐 Live Website
 
-- Live Site: [Add Your Deployed Website URL]
-- Client Repository: [Add Your Client GitHub Repository URL]
-- Server Repository: [Add Your Server GitHub Repository URL]
+- Live Site:https://assignment-8-ten-omega.vercel.app
+- Client Repository:https://github.com/mahbubur75/Assignment-8.git
+- Server Repository: https://github.com/mahbubur75/Assignment-8-server.git
 
 🎯 Project Purpose
 
